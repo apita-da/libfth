@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apita-da <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/21 20:37:16 by apita-da          #+#    #+#             */
-/*   Updated: 2019/11/25 15:58:53 by apita-da         ###   ########.fr       */
+/*   Created: 2019/11/25 12:57:48 by apita-da          #+#    #+#             */
+/*   Updated: 2019/11/25 18:00:37 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcpy(char *dst, const char *src)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	cont;
+	char	*s3;
+	int		cont;
 
+	if (!s1 || !s2)
+		return (NULL);
+	if (!(s3 = (char *)malloc(sizeof(char *) *
+		(ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1))))
+		return (NULL);
+	s3 = ft_strcpy((char *)s3, (char *)s1);
 	cont = 0;
-	while (src[cont] != '\0')
+	while (s3[cont] != '\0')
+		cont++;
+	while (*s2)
 	{
-		dst[cont] = src[cont];
+		s3[cont] = (char)*s2++;
 		cont++;
 	}
-	dst[cont] = '\0';
-	return (dst);
+	s3[cont] = '\0';
+	return ((char *)s3);
 }
