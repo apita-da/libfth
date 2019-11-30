@@ -6,7 +6,7 @@
 /*   By: apita-da <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/15 14:23:35 by apita-da          #+#    #+#             */
-/*   Updated: 2019/11/27 17:01:00 by apita-da         ###   ########.fr       */
+/*   Updated: 2019/11/30 17:09:19 by apita-da         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		ft_isdigit(int a);
 int		ft_isprint(int c);
 size_t	ft_strlen(const char *s);
 int		ft_toupper(int c);
+int		ft_tolower(int c);
 void	*ft_memset(void *str, int c, size_t nb);
 void	ft_bzero(void *str, size_t nb);
 void	*ft_memcpy(void *dst, const void *src, size_t nb);
@@ -48,7 +49,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
 char	**ft_split(char const *s, char c);
-//char	*ft_itoa(int n);
+char	*ft_itoa(int n);
+int		ft_intlen(int n);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_wordcount(char const *s, char c);
 
 #endif
